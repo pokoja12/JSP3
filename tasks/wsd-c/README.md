@@ -1,2 +1,4 @@
 # Describe and document your code here
-We tried to run and modify the code, but unfortunately it just dont see ollama. At least in google collab it does not recognise it.
+Previously we installed and ran Ollama. We chose the model llama 3.2. The running was succesfull (the prompt works).
+We started to use Google Colab and ran th GPU there. 
+Then we were trying to modify the code, but we had troubles with it. Here is our attempt or beginning: https://colab.research.google.com/drive/1DTkn8v-nB66B6adZHfv4skkdBbUKN7Sn?usp=sharing. 
