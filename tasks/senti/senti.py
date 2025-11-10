@@ -3,8 +3,10 @@ from nltk.sentiment.vader import SentimentIntensityAnalyzer
 from nltk.corpus import wordnet as wn
 from nltk.tokenize import word_tokenize, sent_tokenize
 import yaml
-import statistics
+from statistics import mean
 
+#wordnet_file ="/Users/macbook/Desktop/programovani_uloziste/JSP3/sentiment_wordnet.yml"
+wordnet_file = "best-sense.yaml"
 
 def load_text_from_web(url):
     response = urlopen(url)
@@ -41,13 +43,13 @@ def load_yaml_file(yaml_path):
     return data
 
 
-def new_wornet_sentiment_per_sentence(text):
+def new_wornet_sentiment_per_sentence(text, wordnet_file):
     """
     Tokenizes text into sentences and words, finds all synsets of each word in a sentiment wordnet,
     gets their sentiment values from a new sentiment wordnet, and averages per word and per sentence.
     Returns a list of average sentiment values (compound_values) for each sentence.
     """
-    senti_wordnet_dict = load_yaml_file("/Users/macbook/Desktop/programovani_uloziste/JSP3/sentiment_wordnet.yml")
+    senti_wordnet_dict = load_yaml_file(wordnet_file)
 
     sentences = sent_tokenize(text)
     compound_values = []
@@ -74,10 +76,10 @@ def new_wornet_sentiment_per_sentence(text):
                         break  # stop searching after the first match
 
             if synset_values:
-                word_values.append(statistics.mean(synset_values))
+                word_values.append(mean(synset_values))
 
         if word_values:
-            compound_values.append(statistics.mean(word_values))
+            compound_values.append(mean(word_values))
 
     return compound_values
 
@@ -140,7 +142,7 @@ I'd love to turn you on
     #print(alternative_text)
 
     sentiments_per_sentence = vader_sentiment_per_sentence(alternative_text)
-    new_sentiments_per_sentence = new_wornet_sentiment_per_sentence(alternative_text)
+    new_sentiments_per_sentence = new_wornet_sentiment_per_sentence(alternative_text, wordnet_file)
     
     print(sentiments_per_sentence)
     print(new_sentiments_per_sentence)
