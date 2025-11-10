@@ -3,4 +3,5 @@ Previously we installed and ran Ollama. We chose the model llama 3.2. The runnin
 
 We started to use Google Colab and connected a GPU there. 
 Then we were trying to modify the code, but we had troubles with it. Here is our attempt or just beginning: https://colab.research.google.com/drive/1DTkn8v-nB66B6adZHfv4skkdBbUKN7Sn?usp=sharing. 
+
 I have just added file with the last version of our code.
