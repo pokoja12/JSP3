@@ -15,7 +15,7 @@ Look at common mistakes and try to fix them (e.g. *se/si*)
 
 ## Difficulty
 
-Not so hard, but requires some interaction with SQL
+
 
 ## Next tasks
 
