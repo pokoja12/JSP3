@@ -6,3 +6,6 @@ Then we were trying to modify the code, but we had troubles with it. Here is our
 
 I have just added file with the last version of our code.
 https://colab.research.google.com/drive/1NY11_TIlpxivdWrt7X59ONWxJsfbRC18
+
+The latest version of our code: 
+https://colab.research.google.com/drive/1xO9NhI9qq1lqgr4uHnf9S3OjvNecAhmh?usp=sharing
